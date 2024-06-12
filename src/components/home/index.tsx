@@ -4,6 +4,7 @@ import Card from "./card/Card";
 import { Box, Typography } from "@mui/material";
 import { title } from "process";
 import Link from "next/link";
+import SingleProduct from "./singleProduct/SingleProduc";
 
 // title,imageSrc,discount,price,rate,colorPalletArray
 
@@ -59,7 +60,7 @@ export default function Home() {
       <p>Welcome home!</p>
       <CustomContainer  hasLink={true} title="Best Sellers" >
         <Box display={"flex"} gap={"24px"}>
-        {cardArray?.map((item)=>(<Card key={item.imageSrc} cardProps={item} />))}
+        {cardArray?.map((item)=>(<Card key={item.imageSrc} cardProps={item} hoverMode={{hoverMode:"productHover"}}/>))}
         </Box>
       </CustomContainer>
       <Box height="52px"></Box>
@@ -91,5 +92,8 @@ export default function Home() {
       </Box>
    
     </div>
+    // <>
+    // <SingleProduct></SingleProduct>
+    // </>
   );
 }
